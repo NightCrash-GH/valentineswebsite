@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise shawty!!!</title>
+
+    <style>
+        body {
+            margin: 0;
+            height: 100vh; 
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            background-image: url('valentines.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat; 
+        }
+
+        div {
+            text-align: center;
+            font-family: Arial, sans-serif; 
+        }
+
+        h1 {
+            background: linear-gradient(pink,  purple);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em; /
+        }
+
+        img {
+            margin-bottom: 20px; 
+        }
+
+        #yes, #no {
+            display: inline-block;
+            background-color: #00ff00; 
+            color: black;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px; 
+        }
+
+        #no {
+            background-color: #ff0000; 
+        }
+
+        .pop {
+            animation: pop 2s forwards;
+        }
+
+        @keyframes pop {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Will you be my valentine? 
+            ฅ ^ ≧∇≦^  ฅ</h1>
+        <img src="pusheenheart.gif" alt="Pusheen Heart" width="180px" height="172px">
+        <div>
+            <button id="yes">Yes!</button>
+            <button id="no">No D:</button>
+        </div>
+    </div>
+
+    <audio id="yesSound" src="kids-saying-yay-sound-effect_3.mp3"></audio>
+    <audio id="noSound" src="plankton-augh.mp3"></audio>
+
+    <script>
+        document.getElementById("yes").addEventListener("click", function() {
+
+            document.getElementById("yesSound").play();
+
+            alert(
+                "  ∧,,,∧\n" +
+                " (• ⩊ •)\n" +
+                "|YAYYYYYYYYYYYYYYYYYYYYYYYYYYYYYY|\n" +
+                "|I love you princess see you soon|\n" +
+                " -------------------------------"
+            );
+        });
+
+        document.getElementById("no").addEventListener("click", function() {
+            document.getElementById("noSound").play();
+
+            this.classList.add("pop");
+            setTimeout(() => {
+                this.style.display = 'none'; 
+            }, 300); 
+        });
+    </script>
+</body>
+</html>
